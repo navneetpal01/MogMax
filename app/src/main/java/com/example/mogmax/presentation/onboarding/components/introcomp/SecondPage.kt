@@ -91,7 +91,6 @@ fun NotificationScreen(
                         animationSpec = spring(dampingRatio = 0.3f, stiffness = 20f)
                     )
                 ) {
-                    //Notification
                     Notification(modifier = modifier)
                 }
                 LaunchedEffect(true){
