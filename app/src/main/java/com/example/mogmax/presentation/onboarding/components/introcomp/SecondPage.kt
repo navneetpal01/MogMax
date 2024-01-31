@@ -3,7 +3,6 @@ package com.example.mogmax.presentation.onboarding.components.introcomp
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -92,6 +91,7 @@ fun NotificationScreen(
                         animationSpec = spring(dampingRatio = 0.3f, stiffness = 20f)
                     )
                 ) {
+                    //Notification
                     Notification(modifier = modifier)
                 }
                 LaunchedEffect(true){
