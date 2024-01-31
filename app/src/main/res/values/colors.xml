@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_main">#FF121212</color>
+    <color name="button_green">#C9FC6E</color>
+    <color name="text_green">#C6F96F</color>
+    <color name="grey_text">#8E8E90</color>
+    //System Colors
+    <color name="system_gray_6">#1C1C1C</color> //Card
+    <color name="system_gray_5">#2C2C2C</color> //Elements
+    <color name="system_black">#000000</color>
+
+    //Phone Colors
+    <color name="phone_color">#2B2B2B</color> //Background
+    //Notification Colors
+    <color name="notification_background">#4E5051</color>
+    <color name="notification_icon">#1E1E1E</color>
+    <color name="notification_content">#7F7F81</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
