@@ -18,7 +18,9 @@ import com.example.mogmax.presentation.nvgraph.Route
 import com.example.mogmax.ui.theme.MogMaxTheme
 import com.example.mogmax.ui.theme.rememberWindowSizeClass
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

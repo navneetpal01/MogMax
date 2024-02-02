@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -82,8 +83,12 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$nav_version")
 
     //Dependency Injection
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
+
+    //DataStore Preferences
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
 
 }
 
