@@ -1,4 +1,4 @@
-package com.example.mogmax.presentation.onboarding.components.getstartedcomp
+package com.example.mogmax.presentation.getstarted.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image

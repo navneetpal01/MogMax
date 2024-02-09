@@ -1,4 +1,4 @@
-package com.example.mogmax.presentation.common
+package com.example.mogmax.util
 
 import java.text.SimpleDateFormat
 import java.util.Date

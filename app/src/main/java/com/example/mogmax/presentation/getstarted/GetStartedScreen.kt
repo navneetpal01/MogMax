@@ -1,4 +1,4 @@
-package com.example.mogmax.presentation.onboarding
+package com.example.mogmax.presentation.getstarted
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.spring
@@ -22,10 +22,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import com.example.mogmax.presentation.common.vibrateOnClick
+import com.example.mogmax.util.vibrateOnClick
 import com.example.mogmax.presentation.nvgraph.Route
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.GetStartedImage
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.OnBoardingCard
+import com.example.mogmax.presentation.getstarted.components.GetStartedImage
+import com.example.mogmax.presentation.getstarted.components.OnBoardingCard
 import com.example.mogmax.ui.theme.ColumnGrad
 
 @Composable

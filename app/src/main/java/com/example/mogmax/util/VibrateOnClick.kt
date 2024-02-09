@@ -1,4 +1,4 @@
-package com.example.mogmax.presentation.common
+package com.example.mogmax.util
 
 import android.content.Context
 import android.os.Build

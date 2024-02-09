@@ -1,14 +1,12 @@
-package com.example.mogmax.presentation.onboarding.components.getstartedcomp
+package com.example.mogmax.presentation.getstarted.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
@@ -20,7 +18,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.mogmax.R
 import com.example.mogmax.ui.theme.AppTheme
 
@@ -32,15 +29,14 @@ fun ContinueButton(
 ) {
     Surface(
         modifier = modifier
-            .height(50.dp)
+            .height(AppTheme.getMogMaxDimens.fiftyDp)
             .fillMaxWidth()
-            .padding(horizontal = 10.dp)
-            .clip(RoundedCornerShape(CornerSize(AppTheme.getStartedDimes.buttonCornerSize)))
+            .clip(RoundedCornerShape(CornerSize(AppTheme.getMogMaxDimens.fifteenDp)))
             .clickable {
                 onClick()
             },
-        shape = RoundedCornerShape(CornerSize(AppTheme.getStartedDimes.buttonCornerSize)),
-        border = BorderStroke(width = 1.dp, color = colorResource(id = R.color.black)),
+        shape = RoundedCornerShape(CornerSize(AppTheme.getMogMaxDimens.fifteenDp)),
+        border = BorderStroke(width = AppTheme.getMogMaxDimens.oneDp, color = colorResource(id = R.color.black)),
         color = colorResource(id = R.color.button_green)
     ) {
         Column(
@@ -50,16 +46,12 @@ fun ContinueButton(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "Continue",
-                    fontSize = AppTheme.getStartedDimes.continueButtonTextSize,
-                    color = colorResource(id = R.color.black),
-                    fontWeight = FontWeight.Bold
-                )
-            }
+            Text(
+                text = "Continue",
+                fontSize = AppTheme.getMogMaxDimens.fifteenSp,
+                color = colorResource(id = R.color.black),
+                fontWeight = FontWeight.Bold
+            )
         }
     }
 }

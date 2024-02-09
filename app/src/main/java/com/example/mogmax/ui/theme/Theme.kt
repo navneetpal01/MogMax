@@ -14,11 +14,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.GetStartedDimens
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.bigGetStartedDimes
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.compactGetStartedDimens
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.mediumGetStartedDimens
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.smallGetStartedDimens
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -78,43 +73,25 @@ fun MogMaxTheme(
         else -> windowSizeClass.height
     }
 
-    val dimensions = when(sizeThatMaters){
-        is WindowSize.Small -> smallDimensions
-        is WindowSize.Compact -> compactDimensions
-        is WindowSize.Medium -> mediumDimensions
-        else -> largeDimensions
-    }
 
-    val typography = when(sizeThatMaters){
-        is WindowSize.Small -> typographySmall
-        is WindowSize.Compact -> typographyCompact
-        is WindowSize.Medium -> typographyMedium
-        else -> typographyBig
+    val getMogMaxDimens = when(sizeThatMaters){
+        is WindowSize.Small -> smallMogMaxDimens
+        is WindowSize.Compact -> compactMogMaxDimens
+        is WindowSize.Medium -> mediumMogMaxDimens
+        else -> bigMogMaxDimes
     }
-
-    val getStartedDimens = when(sizeThatMaters){
-        is WindowSize.Small -> smallGetStartedDimens
-        is WindowSize.Compact -> compactGetStartedDimens
-        is WindowSize.Medium -> mediumGetStartedDimens
-        else -> bigGetStartedDimes
-    }
-    ProvideAppUtils(dimensions = dimensions, orientation = orientation, getStartedDimens = getStartedDimens ) {
+    ProvideAppUtils(orientation = orientation, mogMaxDimens = getMogMaxDimens ) {
         MaterialTheme(
             colorScheme = colorScheme,
-            typography = typography,
             content = content
         )
     }
 }
 object AppTheme{
-    val dimens : Dimensions
-        @Composable
-        get() = LocalAppDimens.current
-
     val orientation : Orientation
         @Composable
         get() = LocalOrientationMode.current
-    val getStartedDimes : GetStartedDimens
+    val getMogMaxDimens : MogMaxDimens
         @Composable
-        get() = LocalGetStartedDimens.current
+        get() = LocalMogMaxDimens.current
 }

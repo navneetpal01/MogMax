@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.mogmax.presentation.onboarding.GetStartedScreen
-import com.example.mogmax.presentation.onboarding.IntroScreen
+import com.example.mogmax.presentation.getstarted.GetStartedScreen
+import com.example.mogmax.presentation.intro.IntroScreen
 
 @Composable
 fun NavGraph(

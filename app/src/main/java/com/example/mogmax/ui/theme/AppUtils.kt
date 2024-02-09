@@ -4,36 +4,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.remember
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.GetStartedDimens
-import com.example.mogmax.presentation.onboarding.components.getstartedcomp.smallGetStartedDimens
 
 @Composable
 fun ProvideAppUtils(
-    dimensions: Dimensions,
-    getStartedDimens : GetStartedDimens,
+    mogMaxDimens : MogMaxDimens,
     orientation: Orientation,
     content: @Composable () -> Unit
 ) {
-    val dimSet = remember { dimensions }
-    val gsDimens = remember {getStartedDimens}
+    val mogMaxDimens = remember {mogMaxDimens}
     val orientation = remember { orientation }
     CompositionLocalProvider(
-        LocalAppDimens provides dimSet,
         LocalOrientationMode provides orientation,
-        LocalGetStartedDimens provides gsDimens,
+        LocalMogMaxDimens provides mogMaxDimens,
         content = content
     )
 
 }
 
 //which takes a lambda expression that returns the initial value of the local variable
-val LocalAppDimens = compositionLocalOf {
-    smallDimensions
-}
 
 val LocalOrientationMode = compositionLocalOf {
     Orientation.Portrait
 }
-val LocalGetStartedDimens = compositionLocalOf {
-    smallGetStartedDimens
+val LocalMogMaxDimens = compositionLocalOf {
+    smallMogMaxDimens
 }
