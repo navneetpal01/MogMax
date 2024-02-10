@@ -37,7 +37,6 @@ fun PictureScreen(
             .statusBarsPadding()
             .navigationBarsPadding()
     ) {
-
         Box(
             modifier = Modifier
                 .fillMaxWidth()
