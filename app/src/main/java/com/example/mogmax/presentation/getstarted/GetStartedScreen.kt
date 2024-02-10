@@ -22,11 +22,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import com.example.mogmax.util.vibrateOnClick
-import com.example.mogmax.presentation.nvgraph.Route
 import com.example.mogmax.presentation.getstarted.components.GetStartedImage
 import com.example.mogmax.presentation.getstarted.components.OnBoardingCard
+import com.example.mogmax.presentation.nvgraph.Route
 import com.example.mogmax.ui.theme.ColumnGrad
+import com.example.mogmax.util.vibrateOnClick
 
 @Composable
 fun GetStartedScreen(navController: NavController) {
@@ -47,10 +47,13 @@ fun GetStartedScreen(navController: NavController) {
                 .background(Color.Black)
                 .navigationBarsPadding()
         ) {
-            GetStartedImage()
+            GetStartedImage(
+                modifier = Modifier
+                    .fillMaxHeight(fraction = 0.6f)
+            )
             Box(
                 modifier = Modifier
-                    .fillMaxHeight(fraction = 0.65f)
+                    .fillMaxHeight(fraction = 0.6f)
                     .fillMaxWidth()
                     .background(brush = ColumnGrad)
                     .align(Alignment.BottomEnd)

@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import com.example.mogmax.R
-import com.example.mogmax.presentation.getstarted.components.ContinueButton
+import com.example.mogmax.presentation.common.MogMaxButton
 import com.example.mogmax.ui.theme.AppTheme
 import com.example.mogmax.ui.theme.interBold
 import com.example.mogmax.ui.theme.segoeFont
@@ -34,7 +34,11 @@ fun OnBoardingCard(
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = AppTheme.getMogMaxDimens.tenDp, end = AppTheme.getMogMaxDimens.tenDp, bottom = AppTheme.getMogMaxDimens.fiveDp),
+            .padding(
+                start = AppTheme.getMogMaxDimens.tenDp,
+                end = AppTheme.getMogMaxDimens.tenDp,
+                bottom = AppTheme.getMogMaxDimens.fiveDp
+            ),
         shape = RoundedCornerShape(CornerSize(AppTheme.getMogMaxDimens.fortyDp)),
         tonalElevation = AppTheme.getMogMaxDimens.tenDp,
         color = colorResource(id = R.color.system_gray_6)
@@ -50,7 +54,12 @@ fun OnBoardingCard(
                 Text(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = AppTheme.getMogMaxDimens.fortyDp, start = AppTheme.getMogMaxDimens.tenDp, end = AppTheme.getMogMaxDimens.tenDp, bottom = AppTheme.getMogMaxDimens.tenDp),
+                        .padding(
+                            top = AppTheme.getMogMaxDimens.fortyDp,
+                            start = AppTheme.getMogMaxDimens.tenDp,
+                            end = AppTheme.getMogMaxDimens.tenDp,
+                            bottom = AppTheme.getMogMaxDimens.tenDp
+                        ),
                     text = buildAnnotatedString {
                         withStyle(
                             style = SpanStyle(
@@ -78,12 +87,14 @@ fun OnBoardingCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                //    .background(Color.Green)
             ) {
                 Text(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(all = AppTheme.getMogMaxDimens.tenDp),
+                        .padding(
+                            horizontal = AppTheme.getMogMaxDimens.tenDp,
+                            vertical = AppTheme.getMogMaxDimens.fiveDp
+                        ),
                     text = "Transform your face, one smile at a time. Unleash the power of facial fitness with our innovative exercise app, sculpting confidence and radiance through every expression." +
                             "Elevate your natural beauty – because a healthy smile is the ultimate workout!",
                     fontSize = AppTheme.getMogMaxDimens.fifteenSp,
@@ -97,13 +108,18 @@ fun OnBoardingCard(
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                ContinueButton(
+                MogMaxButton(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = AppTheme.getMogMaxDimens.twentyDp, vertical = AppTheme.getMogMaxDimens.twentyDp),
+                        .padding(
+                            horizontal = AppTheme.getMogMaxDimens.twentyDp,
+                            vertical = AppTheme.getMogMaxDimens.twentyDp
+                        ),
+                    color = colorResource(id = R.color.button_green),
                     onClick = {
                         onClick()
-                    }
+                    },
+                    text = "Continue"
                 )
                 Box(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                     Text(

@@ -1,6 +1,5 @@
-package com.example.mogmax.presentation.getstarted.components
+package com.example.mogmax.presentation.common
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,9 +23,11 @@ import com.example.mogmax.ui.theme.AppTheme
 
 
 @Composable
-fun ContinueButton(
+fun MogMaxButton(
     modifier: Modifier = Modifier,
-    onClick: () -> Unit
+    onClick: () -> Unit,
+    color : Color = colorResource(id = R.color.button_green),
+    text : String,
 ) {
     Surface(
         modifier = modifier
@@ -36,8 +38,7 @@ fun ContinueButton(
                 onClick()
             },
         shape = RoundedCornerShape(CornerSize(AppTheme.getMogMaxDimens.fifteenDp)),
-        border = BorderStroke(width = AppTheme.getMogMaxDimens.oneDp, color = colorResource(id = R.color.black)),
-        color = colorResource(id = R.color.button_green)
+        color = color
     ) {
         Column(
             modifier = Modifier
@@ -47,7 +48,7 @@ fun ContinueButton(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Continue",
+                text = text,
                 fontSize = AppTheme.getMogMaxDimens.fifteenSp,
                 color = colorResource(id = R.color.black),
                 fontWeight = FontWeight.Bold

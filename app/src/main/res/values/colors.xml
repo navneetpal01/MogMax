@@ -11,10 +11,13 @@
 
     //Phone Colors
     <color name="phone_color">#2B2B2B</color> //Background
-    //Notification Colors
-    <color name="notification_background">#4E5051</color>
-    <color name="notification_icon">#1E1E1E</color>
-    <color name="notification_content">#7F7F81</color>
+
+    //Text Gradient
+    <color name="text_grad1">#8AD4EC</color>
+    <color name="text_grad2">#EF96FF</color>
+    <color name="text_grad3">#FF56A9</color>
+    <color name="text_grad4">#FFAA6C</color>
+
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

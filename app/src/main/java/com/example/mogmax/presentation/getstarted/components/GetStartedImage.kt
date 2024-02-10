@@ -39,8 +39,8 @@ fun GetStartedImage(
         userScrollEnabled = false,
     ) { image ->
         Image(
-            modifier = Modifier
-                .fillMaxHeight(fraction = 0.6f)
+            modifier = modifier
+                .fillMaxHeight()
                 .fillMaxWidth(),
             painter = painterResource(id = imageList[image]),
             colorFilter = ColorFilter.colorMatrix(
