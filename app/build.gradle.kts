@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mogmax"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -53,7 +53,6 @@ android {
 }
 
 dependencies {
-
     val composeBom = platform("androidx.compose:compose-bom:2023.10.01")
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -71,6 +70,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //Swipe-able
+    implementation("androidx.wear.compose:compose-material:1.3.0")
 
     //ViewModels
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")

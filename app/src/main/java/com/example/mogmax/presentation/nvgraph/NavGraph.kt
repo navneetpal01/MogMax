@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.mogmax.presentation.picture.PictureScreen
+import com.example.mogmax.presentation.Intro.IntroScreen
 import com.example.mogmax.presentation.getstarted.GetStartedScreen
 
 @Composable
@@ -21,7 +21,7 @@ fun NavGraph(
             )
         }
         composable(route = Route.IntroScreen.route) {
-            PictureScreen() {
+            IntroScreen() {
                 if (navController.canGoBack) {
                     navController.popBackStack()
                 }

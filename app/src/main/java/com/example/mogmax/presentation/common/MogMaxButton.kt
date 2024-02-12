@@ -1,5 +1,6 @@
 package com.example.mogmax.presentation.common
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -37,6 +38,7 @@ fun MogMaxButton(
             .clickable {
                 onClick()
             },
+        border = BorderStroke(AppTheme.getMogMaxDimens.oneDp, color = colorResource(id = R.color.system_black)),
         shape = RoundedCornerShape(CornerSize(AppTheme.getMogMaxDimens.fifteenDp)),
         color = color
     ) {
