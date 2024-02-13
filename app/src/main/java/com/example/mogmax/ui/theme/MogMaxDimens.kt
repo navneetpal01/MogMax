@@ -7,6 +7,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mogmax.R
+
 val vigaFont = FontFamily(Font(R.font.viga_regular))
 val segoeFont = FontFamily(Font(R.font.segoe_ui))
 val interBold = FontFamily(Font(R.font.inter_bold))

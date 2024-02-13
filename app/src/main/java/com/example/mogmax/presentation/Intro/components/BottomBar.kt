@@ -7,6 +7,7 @@ import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -34,31 +35,9 @@ import androidx.wear.compose.material.FractionalThreshold
 import androidx.wear.compose.material.rememberSwipeableState
 import androidx.wear.compose.material.swipeable
 import com.example.mogmax.R
+import com.example.mogmax.ui.theme.segoeFont
+import com.example.mogmax.ui.theme.vigaFont
 import kotlin.math.roundToInt
-
-
-
-
-
-@Composable
-fun BottomBar(
-    modifier : Modifier
-){
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @SuppressLint("UnrememberedMutableState")
 @Composable
@@ -77,22 +56,22 @@ fun DraggableControl(
             .background(color = colorResource(id = R.color.white), shape = CircleShape),
         contentAlignment = Alignment.Center
     ) {
-        val isConfirmed = derivedStateOf { progress >=0.8f }
-        Crossfade(targetState = isConfirmed.value, label = "Crossfade") { Done->
-            if (Done){
+        val isConfirmed = derivedStateOf { progress >= 0.8f }
+        Crossfade(targetState = isConfirmed.value, label = "Crossfade") { Done ->
+            if (Done) {
                 Icon(
                     imageVector = Icons.Filled.Done,
                     contentDescription = "Confirm Icon",
                     tint = colorResource(id = R.color.system_black)
                 )
-            }else{
+            } else {
                 Icon(
                     imageVector = Icons.Filled.ArrowForward,
                     contentDescription = "Forword Icon",
                     tint = colorResource(id = R.color.system_black)
                 )
             }
-            
+
         }
 
     }
@@ -101,29 +80,30 @@ fun DraggableControl(
 @SuppressLint("UnrememberedMutableState")
 @OptIn(ExperimentalWearMaterialApi::class)
 @Composable
-fun ScrollButton(
-    modifier : Modifier = Modifier,
-    onConfirmed : () -> Unit
-){
+fun SwipeButton(
+    modifier: Modifier = Modifier,
+    onConfirmed: () -> Unit
+) {
     val width = 350.dp
-    val dragSize = 50.dp
+    val dragSize = 60.dp
     val swipeableState = rememberSwipeableState(initialValue = ScrollState.DEFAULT)
-    val sizePx = with(LocalDensity.current){
+    val sizePx = with(LocalDensity.current) {
         (width - dragSize).toPx()
     }
     val anchors = mapOf(0f to ScrollState.DEFAULT, sizePx to ScrollState.CONFIRMED)
     val progress = derivedStateOf {
         if (swipeableState.offset.value == 0f) 0f else swipeableState.offset.value / sizePx
     }
-    LaunchedEffect(swipeableState.currentValue){
-        if (swipeableState.currentValue == ScrollState.CONFIRMED){
+    LaunchedEffect(swipeableState.currentValue) {
+        if (swipeableState.currentValue == ScrollState.CONFIRMED) {
             onConfirmed()
             swipeableState.animateTo(ScrollState.DEFAULT)
         }
     }
     Box(
-        modifier = modifier
+        modifier = Modifier
             .width(width)
+            .padding(bottom = 20.dp)
             .swipeable(
                 state = swipeableState,
                 anchors = anchors,
@@ -133,22 +113,25 @@ fun ScrollButton(
                 orientation = Orientation.Horizontal
             )
             .background(
-                color = colorResource(id = R.color.system_gray_5),
+                color = colorResource(id = R.color.system_gray_6),
                 shape = RoundedCornerShape(dragSize)
             )
-    ){
+    ) {
         Row(
             modifier = Modifier
+                .fillMaxWidth()
                 .align(Alignment.Center)
                 .alpha(1f - progress.value),
             horizontalArrangement = Arrangement.Center
-        ){
+        ) {
             Text(
-                text = "Swipe for Next"
+                text = "Swipe for Next",
+                color = colorResource(id = R.color.white),
+                fontFamily = segoeFont
             )
         }
         DraggableControl(
-            modifier = Modifier
+            modifier = modifier
                 .offset {
                     IntOffset(swipeableState.offset.value.roundToInt(), 0)
                 }
@@ -156,19 +139,6 @@ fun ScrollButton(
             progress = progress.value
         )
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
